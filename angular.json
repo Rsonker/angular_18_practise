@@ -62,7 +62,8 @@
               "buildTarget": "pracise:build:production"
             },
             "development": {
-              "buildTarget": "pracise:build:development"
+              "buildTarget": "pracise:build:development",
+              "port":4203
             }
           },
           "defaultConfiguration": "development"
