@@ -1,0 +1,95 @@
+
+<div class="mt-2 p-2 bg-secondary text-white rounded" style="min-height: 150px;">
+    <h1>Reactive Form</h1>
+    
+</div>
+<h4 class="mt-4">Steps to create template <form action=""></form></h4>
+<ol>
+    <li>Import ReactiveFormsModule in TS file</li>
+    <li>Bind form group in form tag in HTML file</li>
+    <li>use formControlName property name in HTML form element and give the value from FormGroup defined in TS file.</li>
+</ol>
+<div class="container p-4">
+    <form class="row g-3 needs-validation" novalidate [formGroup]="studentForm">
+        <div class="col-md-4">
+          <label for="firstName" class="form-label">First name</label>
+          <input type="text" id="firstName" class="form-control"
+          formControlName="firstName">
+          <div class="text-danger">
+             @if(firstNameControl.errors?.['required']
+             && firstNameControl.dirty)
+             {
+                <span >this is required</span>
+            }
+            @else if(firstNameControl.errors?.['minlength']){
+                <span >Minimum 4 Characters required. </span>
+            }
+                <!-- {{studentForm.controls['firstName'].errors | json}} -->
+          </div>
+          
+        </div>
+        <div class="col-md-4">
+          <label for="lastName" class="form-label">Last name</label>
+          <input type="text" id="lastName" class="form-control" formControlName="lastName" >
+         
+        </div>
+        <div class="col-md-4">
+          <label for="userName" class="form-label">Username</label>
+          <div class="input-group has-validation">
+            <span class="input-group-text">&#x40;</span>
+            <input type="text" id="userName" class="form-control" aria-describedby="inputGroupPrepend"  formControlName="userName">
+            <div class="text-danger">
+                @if(userNameControl.errors?.['required'] && 
+                userNameControl.touched){
+                    <span >this is required</span>
+                }
+                @if(userNameControl.errors?.['email'] && 
+                userNameControl.touched){
+                    <span >Enter correct Email</span>
+                }
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="city" class="form-label">City</label>
+          <input type="text" id="city" class="form-control"  formControlName="city">
+        </div>
+        <div class="col-md-3">
+          <label for="state" class="form-label">State</label>
+          <select class="form-select" id="state" formControlName="state">
+            <option selected disabled value="">Choose...</option>
+            <option>Ahemdbad</option>
+            <option>Bombay</option>
+            <option>Chennai</option>
+            <option>Delhi</option>
+            <option>Etawah</option>
+            <option>Faridabad</option>
+            <option>Goa</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <label for="zip" class="form-label">Zip</label>
+          <input type="text" id="zip" class="form-control"  formControlName="zip" >
+        </div>
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" formControlName="isAcceptTerms">
+            <label class="form-check-label" id="isAcceptTerms">
+              Agree to terms and conditions
+            </label>
+           
+          </div>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary" type="button" 
+          (click)="onSave()" [disabled]="studentForm.invalid">Submit</button>
+          &nbsp;
+          <button class="btn btn-warning" type="button"
+          >Reset</button>
+        </div>
+      </form>
+
+      <div>
+        {{formValue | json}}
+      </div>
+</div>

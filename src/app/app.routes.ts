@@ -5,6 +5,11 @@ import { EmployeeListComponent } from './employee/employee-list/employee-list.co
 import { StructuralDirectiveComponent } from './component/practise/structural-directive/structural-directive.component';
 import { AttributeDirectiveComponent } from './component/practise/attribute-directive/component/practise/attribute-directive.component';
 import { HomeComponent } from './component/practise/home/home.component';
+import { IfelseComponent } from './component/practise/controlFlow/ifelse/ifelse.component';
+import { ForLoopComponent } from './component/practise/controlFlow/for-loop/for-loop.component';
+import { PipeComponent } from './component/practise/pipe/pipe.component';
+import { TemplateFormComponent } from './component/practise/form/template-form/template-form.component';
+import { ReactiveFormComponent } from './component/practise/form/reactive-form/reactive-form.component';
 
 export const routes: Routes = [
     {
@@ -30,5 +35,25 @@ export const routes: Routes = [
     {
         path: 'attribute-directive',
         component: AttributeDirectiveComponent
-    }
+    },
+    {
+        path: 'control-flow/if-else',
+        component: IfelseComponent
+    },
+    {
+        path: 'control-flow/for-loop',
+        component: ForLoopComponent
+    },
+    {
+        path: 'pipes',
+        component: PipeComponent
+    },
+    {
+        path: 'forms/templateForm',
+        component: TemplateFormComponent
+    },
+    {
+        path: 'forms/reactiveForm',
+        component: ReactiveFormComponent
+    },
 ];

@@ -1,0 +1,96 @@
+
+<div class="mt-2 p-2 bg-secondary text-white rounded" style="min-height: 150px;">
+    <h1>Template Form</h1>
+    <p>Using ngModel</p>
+</div>
+<h4 class="mt-4">Steps to create template <form action=""></form></h4>
+<ol>
+    <li>Create an object where we have all fields.</li>
+    <li>Bind Properties to all input element by ngModel.</li>
+    <li>On click submit we get form object in TS file method.</li>
+</ol>
+<div class="container p-4">
+    <form class="row g-3 needs-validation" novalidate #form="ngForm">
+        <div class="col-md-4">
+          <label for="validationCustom01" class="form-label">First name</label>
+          <input type="text" class="form-control" id="validationCustom01" [(ngModel)]="studentObj.firstName"  name="firstName"
+          #fName="ngModel" required minlength="3">
+          <div class="text-danger">
+            @if(fName.errors?.['required'] && (fName.touched || fName.dirty)){
+                <span>This is Required</span>
+            }@else if(fName.errors?.['minlength'] && (fName.touched || fName.dirty)){
+                <span>Minimum 3 characters required</span>
+            }
+          </div>
+          <!-- <div>
+            Error Object: {{fName.errors | json}}
+          </div> -->
+        </div>
+        <div class="col-md-4">
+          <label for="validationCustom02" class="form-label">Last name</label>
+          <input type="text" class="form-control" id="validationCustom02" [(ngModel)]="studentObj.lastName" required name="lastName">
+          <div class="text-danger">
+            Looks good!
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationCustomUsername" class="form-label">Username</label>
+          <div class="input-group has-validation">
+            <span class="input-group-text" id="inputGroupPrepend">&#x40;</span>
+            <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required [(ngModel)]="studentObj.userName" name="userName">
+            <div class="text-danger">
+              Please choose a username.
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="validationCustom03" class="form-label">City</label>
+          <input type="text" class="form-control" id="validationCustom03" required [(ngModel)]="studentObj.city" name="city">
+          <div class="text-danger">
+            Please provide a valid city.
+          </div>
+        </div>
+        <div class="col-md-3">
+          <label for="validationCustom04" class="form-label">State</label>
+          <select class="form-select" id="validationCustom04" required [(ngModel)]="studentObj.state" name="state">
+            <option selected disabled value="">Choose...</option>
+            <option>Ahemdbad</option>
+            <option>Bombay</option>
+            <option>Chennai</option>
+            <option>Delhi</option>
+            <option>Etawah</option>
+            <option>Faridabad</option>
+            <option>Goa</option>
+          </select>
+          <div class="text-danger">
+            Please select a valid state.
+          </div>
+        </div>
+        <div class="col-md-3">
+          <label for="validationCustom05" class="form-label">Zip</label>
+          <input type="text" class="form-control" id="validationCustom05" required [(ngModel)]="studentObj.zipcode" name="zipcode">
+          <div class="invalid-feedback">
+            Please provide a valid zip.
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" [(ngModel)]="studentObj.isAcceptTerms" id="invalidCheck" required name="isAcceptTerms">
+            <label class="form-check-label" for="invalidCheck">
+              Agree to terms and conditions
+            </label>
+            <div class="invalid-feedback">
+              You must agree before submitting.
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary" type="button" (click)="onSubmit()"
+          [disabled]="form.invalid"
+          >Submit form</button>
+          &nbsp;
+          <button class="btn btn-primary" type="button" (click)="onReset()"
+          >Reset</button>
+        </div>
+      </form>
+</div>

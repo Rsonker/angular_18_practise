@@ -1,0 +1,188 @@
+<div class="mt-2 p-2 bg-secondary text-white rounded">
+    <h1>Structural Directive &#x40;</h1>
+    <p>&#x40;if, &#x40;else, &#x40;else if </p>
+</div>
+
+<div class="row pt-3">
+    <div class="col-3">
+        @if(div1Visible){
+            <div  class="bg-warning p-3 text-center">            
+                <h4>Div - 1</h4>
+            </div>
+        }
+    </div>
+    <div class="col-3">
+        @if(div2Visible){
+        <div class="bg-success p-3 text-center">
+            <h4>Div - 2 Success</h4>
+        </div>
+    }@else{
+        <div class="bg-info p-3 text-center">
+            <h4>Div - 2 Info</h4>
+        </div>
+    }
+    </div>
+    <div class="col-3">
+        @if(num1 === num2){
+        <div class="bg-danger p-3 text-center">
+            <h4>Div - 3</h4>
+        </div>
+    }
+    </div>
+    <div class="col-3">
+        <div class="bg-primary p-3 text-center">
+            <h4 >Div - 4</h4>
+        </div>
+       
+    </div>
+</div>
+
+<div class="row pt-3">
+    <div class="col-3 text-center">
+        <button class="btn btn-danger" (click)="hideDiv1()">Hide</button>
+        &nbsp;
+        &nbsp;
+        <button class="btn btn-danger" (click)="showDiv1()">Show</button>
+    </div>
+    <div class="col-3 text-center">
+        <button class="btn btn-success" (click)="toggleDiv2()">Toggle</button>
+    </div>
+    <div class="col-3">
+        <div style="display: flex;align-items: center;">
+            <input type="text" placeholder="Num-1" class="width-50"  [(ngModel)]="num1">
+            &nbsp;
+            &nbsp;
+            <input type="text" placeholder="Num-2" class="width-50" [(ngModel)]="num2">
+        </div>
+    </div>
+    <div class="col-3">
+
+        @if(selectedStatus ==  'Active'){
+            <div class="bg-primary text-white p-2">Student is Active</div>
+        }@else if(selectedStatus ==  'In Active'){
+            <div class="bg-success text-white p-2">Student is In Active</div>
+        }@else if(selectedStatus ==  'Pending'){
+            <div class="bg-danger text-white p-2">Student is Pending</div>
+        }@else{
+            <div class="bg-secondary text-white p-2">Please select status</div>
+        }
+
+        <div style="display: flex;align-items:center;justify-content: center;" class="mt-4">
+            <select [(ngModel)]="selectedStatus">
+                <option value="">Select status</option>
+                <option value="Active">Active</option>
+                <option value="In Active">In Active</option>
+                <option value="Pending">Pending</option>
+            </select>
+          </div>
+    </div>
+</div>
+
+
+<!-- Backup starts here -->
+
+<!-- 
+<div class="mt-2 p-2 bg-secondary text-white rounded">
+    <h1>Structural Directive</h1>
+    <p>&#x40;if, &#x40;else, &#x40;else if </p>
+</div>
+
+<div class="row pt-3">
+    <div class="col-3">
+            <div  class="bg-warning p-3 text-center">            
+                <h4>Div - 1</h4>
+            </div>
+    </div>
+    <div class="col-3">
+        <div   class="bg-success p-3 text-center">
+            <h4>Div - 2</h4>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="bg-secondary p-3 text-center">
+            <h4>Div - 3</h4>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="bg-primary p-3 text-center">
+            <h4 >Div - 4</h4>
+        </div>
+    </div>
+</div>
+
+<div class="row pt-3">
+    <div class="col-3 text-center">
+        <button class="btn btn-danger">Hide</button>
+        &nbsp;
+        &nbsp;
+        <button class="btn btn-danger">Show</button>
+    </div>
+    <div class="col-3 text-center">
+        <button class="btn btn-success">Toggle</button>
+    </div>
+    <div class="col-3">
+        <div style="display: flex;align-items: center;">
+            <input type="text" placeholder="Num-1" class="width-50" >
+            &nbsp;
+            &nbsp;
+            <input type="text" placeholder="Num-2" class="width-50">
+        </div>
+    </div>
+    <div class="col-3">
+        <div style="display: flex;align-items:center;justify-content: center;">
+            <input type="checkbox"  class="width-50%" style="width: 50%;">
+            &nbsp;&nbsp;
+            <select>
+                <option value="">Select State</option>
+                <option value="India">India</option>
+                <option value="USA">USA</option>
+                <option value="Shrilanka">Shrilanka</option>
+            </select>
+          </div>
+    </div>
+</div>
+
+<div class="row pt-4">
+    <div class="col-3">
+        <ul>
+            <li></li>
+        </ul>
+    </div>
+    <div class="col-3">
+        <div></div>
+    </div>
+    <div class="col-3">
+        <select>
+            <option></option>
+        </select>
+    </div>
+    <div class="col-3">
+        <select>
+            <option></option>
+        </select>
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col-5">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Student Id</th>
+                    <th>Name</th>
+                    <th>City</th>
+                    <th>Status</th>  
+                </tr> 
+            </thead>
+            <tbody>
+                <tr>
+                    <td ></td>
+                    <td ></td>
+                    <td ></td>
+                    <td > </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div> -->
