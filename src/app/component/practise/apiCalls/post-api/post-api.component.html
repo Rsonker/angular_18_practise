@@ -1,0 +1,62 @@
+<div class="mt-2 p-2 bg-success text-white rounded">
+    <h1>Post API</h1>
+    <h2>Create Department, Department List</h2>
+</div>
+
+<div class="row pt-2">
+    <div class="col-8">
+        <div class="card">
+            <div class="card-header bg-secondary text-white">
+                Department List
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Department Id</th>
+                                    <th>Name</th>
+                                    <th>City</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @for (item of departmentList; track $index) {
+                                    <tr>
+                                        <td>{{item.departmentId}}</td>
+                                        <td>{{item.departmentName}}</td>
+                                        <td>{{item.departmentLogo}}</td>
+                                        <td>{{item.departmentName ? 'Active' : "Inactive"}}</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="card">
+            <div class="card-header bg-secondary text-white">
+                New Department
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label for="departmentName" class="form-label">Department Name</label>
+                    <input type="text" class="form-control" id="departmentName" placeholder="Enter Department Name" [(ngModel)]="deptPayload.departmentName">
+                  </div>
+                  <div class="mb-3">
+                    <label for="departmentLogo" class="form-label">Department Logo</label>
+                    <input type="text" class="form-control" id="departmentLogo" placeholder="Enter Department Logo" [(ngModel)]="deptPayload.departmentLogo">
+                  </div>
+                  <div class="mb-3 d-flex justify-content-around">
+                      <button class="btn btn-success" (click)="onSave()">Submit</button>
+                      <button class="btn btn-secondary">Reset</button>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>
+

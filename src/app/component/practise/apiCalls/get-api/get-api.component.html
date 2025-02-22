@@ -1,0 +1,29 @@
+<div class="row pt-4">
+    <div class="col-2">
+        <button class="btn btn-success" (click)="getAllUsers()">Get Users</button>&nbsp;
+    </div>
+    <div class="col-3">
+        <select class="form-select">
+            @for (item of userList; track $index) {
+                <option [value]="item">{{item.name}}</option>
+            }
+        </select>
+    </div>
+</div>
+<div class="row">
+    <div class="col-2">
+        <button class="btn btn-success" (click)="getAllCustomers()">Get Customers</button>
+    </div>
+    <div class="col-3">
+        <table>
+            <tr>
+                <th>Customer List</th>
+            </tr>
+                @for (item of customerList; track $index) {
+                    <tr>
+                        <td>{{item.userName}}</td>
+                    </tr>
+                }
+        </table>
+    </div>
+</div>

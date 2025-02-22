@@ -10,6 +10,10 @@ import { ForLoopComponent } from './component/practise/controlFlow/for-loop/for-
 import { PipeComponent } from './component/practise/pipe/pipe.component';
 import { TemplateFormComponent } from './component/practise/form/template-form/template-form.component';
 import { ReactiveFormComponent } from './component/practise/form/reactive-form/reactive-form.component';
+import { GetApiComponent } from './component/practise/apiCalls/get-api/get-api.component';
+import { PostApiComponent } from './component/practise/apiCalls/post-api/post-api.component';
+import { UpdateApiComponent } from './component/practise/apiCalls/update-api/update-api.component';
+import { ServiceApiComponent } from './component/practise/apiCalls/service-api/service-api.component';
 
 export const routes: Routes = [
     {
@@ -55,5 +59,21 @@ export const routes: Routes = [
     {
         path: 'forms/reactiveForm',
         component: ReactiveFormComponent
+    },
+    {
+        path: 'api/getApi',
+        component: GetApiComponent
+    },
+    {
+        path: 'api/postApi',
+        component: PostApiComponent
+    },
+    {
+        path: 'api/updateApi',
+        component: UpdateApiComponent
+    },
+    {
+        path: 'api/serviceApi',
+        component: ServiceApiComponent
     },
 ];

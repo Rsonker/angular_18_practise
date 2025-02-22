@@ -1,1 +1,24 @@
 <h1 class="text-primary">Welcome to Angular Practise Exercise</h1>
+<button (click)="showPopup()" class="btn btn-warning">Show Popup</button>
+<app-simple-popup *ngIf="isPopupVisible" (close)="hidePopup($event)"></app-simple-popup>
+&nbsp;
+<button (click)="showModal()" class="btn btn-primary">Show Modal</button>
+<app-simple-modal *ngIf="isModalVisible" (close)="hideModal()"></app-simple-modal>
+<div>&nbsp;</div>
+
+<app-boostrap-modal></app-boostrap-modal>
+&nbsp;
+<div>
+    <button (click)="openCustomModal()" type="button" class="btn btn-success">Open custom Modal</button>
+</div>
+
+<app-hot-cold-obs></app-hot-cold-obs>
+
+<button class="btn btn-primary" (click)="openModal()" type="button">Open Modal</button>
+
+<app-modal
+  *ngIf="isModalOpen"
+  [title]="modalTitle"
+  [message]="modalMessage"
+  (close)="closeModal()">
+</app-modal>
