@@ -19,8 +19,6 @@ export class NgbCommonModalComponent {
 
   closeModal(result?: any) {
     this.activeModal.close(result); // Send data back when modal closes
-    if(result)
-      console.log("Modal Result:", result);
   }
 
 }
