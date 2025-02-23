@@ -18,5 +18,5 @@ import { NavComponent } from "./component/common/nav/nav.component";
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'pracise';
+  title = 'practise';
 }

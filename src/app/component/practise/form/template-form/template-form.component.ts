@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-template-form',
   standalone: true,
-  imports: [FormsModule, JsonPipe],
+  imports: [FormsModule],
   templateUrl: './template-form.component.html',
   styleUrl: './template-form.component.css'
 })

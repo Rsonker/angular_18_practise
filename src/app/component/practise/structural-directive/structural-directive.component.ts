@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-structural-directive',
   standalone: true,
-  imports: [NgIf, NgFor, NgSwitch, FormsModule],
+  imports: [NgIf, NgFor, FormsModule],
   templateUrl: './structural-directive.component.html',
   styleUrl: './structural-directive.component.css'
 })

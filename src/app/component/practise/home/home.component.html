@@ -14,7 +14,7 @@
 
 <app-hot-cold-obs></app-hot-cold-obs>
 
-<button class="btn btn-primary" (click)="openModal()" type="button">Open Modal</button>
+<button class="btn btn-primary" (click)="openModal()">Open Modal</button>
 
 <app-modal
   *ngIf="isModalOpen"
@@ -22,3 +22,7 @@
   [message]="modalMessage"
   (close)="closeModal()">
 </app-modal>
+
+<br>
+<br>
+<button class="btn btn-primary" (click)="openDateModal()">Open Common Modal</button>

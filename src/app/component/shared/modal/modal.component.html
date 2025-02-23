@@ -1,17 +1,25 @@
-<div class="modal fade show d-block" tabindex="-1" role="dialog" (click)="closeModal()">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">{{ title }}</h5>
-          <button type="button" class="btn-close" (click)="closeModal()"></button>
-        </div>
-        <div class="modal-body">
-          <p>{{ message }}</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
-        </div>
+<div class="modal-header">
+  <h5 class="modal-title">{{ title }}</h5>
+  <button type="button" class="btn-close" (click)="activeModal.dismiss()"></button>
+</div>
+
+<div class="modal-body">
+  <form [formGroup]="form">
+    <div *ngFor="let field of form.controls | keyvalue" class="mb-3">
+      <label class="form-label">{{ field.key | titlecase }}</label>
+      <input
+        type="text"
+        class="form-control"
+        [formControlName]="field.key"
+      />
+      <div *ngIf="field.value.invalid && field.value.touched" class="text-danger">
+        {{ field.key | titlecase }} is required.
       </div>
     </div>
-  </div>
-  
+  </form>
+</div>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" (click)="onClose(data)">Close</button>
+  <button type="button" class="btn btn-primary" (click)="saveData()">Save</button>
+</div>
