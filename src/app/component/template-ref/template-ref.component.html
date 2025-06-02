@@ -1,0 +1,52 @@
+<ng-template #show>
+    <p>this is the ng-template</p>
+</ng-template>
+<ng-template #showcontext let-msg="message">
+    <p>this is the ng-template with context using object: <b><u>{{msg}}</u></b></p>
+</ng-template>
+<ng-template #func let-sum="showSum">
+    <p>this is the ng-template with context using function: <b><u>{{sum}}</u></b></p>
+</ng-template>
+<ng-template #tsObj let-data="data">
+    <p>this is the ng-template with context using TS property below is the data: </p>
+        <ul>
+            <li>{{data.name}}</li>
+            <li>{{data.age}}</li>
+            <li>{{data.location}}</li>
+        </ul>
+</ng-template>
+
+
+<ng-container *ngTemplateOutlet="show"></ng-container>
+<ng-container *ngTemplateOutlet="showcontext; context: {message: 'Here is my context.'}"></ng-container>
+<ng-container *ngTemplateOutlet="func; context: {showSum: calc()}"></ng-container>
+<ng-container *ngTemplateOutlet="tsObj; context: {data: showData}"></ng-container>
+
+<hr>
+
+<ng-template #imp let-data1>
+    <p>this is the ng-template with context using implicit below is the data: </p>
+        <ul style="color: goldenrod">
+            <li>{{data1.name}}</li>
+            <li>{{data1.age}}</li>
+            <li>{{data1.location}}</li>
+        </ul>
+</ng-template>
+
+<ng-container *ngTemplateOutlet="imp; context: {$implicit: showData}"></ng-container>
+
+<ng-template #emp let-empData>
+    <table border="1" style="text-align: center;font-size: 16px;margin: 0 auto;" width="70%">
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>Salary</th>
+        </tr>
+        <tr *ngFor="let e of empData">
+            <td>{{e.name}}</td>
+            <td>{{e.age}}</td>
+            <td>{{e.location}}</td>
+        </tr>
+    </table>
+</ng-template>
+<ng-container  *ngTemplateOutlet="emp; context:{$implicit: eomployees}"></ng-container>

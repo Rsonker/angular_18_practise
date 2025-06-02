@@ -1,0 +1,21 @@
+<ng-template #advancedPopup>
+<form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="modal-header">
+      <h5 class="modal-title">User Form</h5>
+      <button type="button" class="btn-close" (click)="activeModal.dismiss('cancel')"></button>
+    </div>
+    <div class="modal-body">
+      <input formControlName="name" class="form-control mb-2" placeholder="Name" />
+      <input formControlName="email" class="form-control" placeholder="Email" />
+      <select class="form-select" formControlName="user">
+        @for (item of userList; track $index) {
+            <option [value]="item.name">{{item.name}}</option>
+        }
+    </select>
+    </div>
+    <div class="modal-footer">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+</ng-template>
+  

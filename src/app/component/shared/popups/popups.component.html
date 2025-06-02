@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        <div class="mt-4">
+            <button class="btn btn-primary" (click)="open(content)">Open Modal</button><br/><br/>
+            <button class="btn btn-info" (click)="openModalWithData()">Intermediate level pop up</button><br><br>
+            <button class="btn btn-success" (click)="openAdvancedModal()">Advanced level pop up</button><br><br>
+            <button class="btn btn-success" (click)="actionPerform()">Advanced level pop up 2:</button><br><br>
+            <button class="btn btn-success" (click)="openWithDataFromAPI()">Advanced level Async pop up</button><br><br>
+        </div>
+    </div>
+</div>
+
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Basic Modal</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <p>This is a basic modal!</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Close click')">Close</button>
+  </div>
+</ng-template>
+
+<!-- <app-advance-level-popup #advanceLevelPopup></app-advance-level-popup> -->

@@ -14,66 +14,128 @@ import { GetApiComponent } from './component/practise/apiCalls/get-api/get-api.c
 import { PostApiComponent } from './component/practise/apiCalls/post-api/post-api.component';
 import { UpdateApiComponent } from './component/practise/apiCalls/update-api/update-api.component';
 import { ServiceApiComponent } from './component/practise/apiCalls/service-api/service-api.component';
+import { PopupsComponent } from './component/shared/popups/popups.component';
+import { TaskPopupComponent } from './component/shared/popups/task-popup/task-popup.component';
+import { TaskPageComponent } from './task-page/task-page.component';
 
 export const routes: Routes = [
     {
         path: '',
-        component: HomeComponent
+        component: HomeComponent,
+        data: {
+            title: 'Home'
+        }
     },
     {
         path: 'add-emp',
-        component: AddEmployeeComponent
+        component: AddEmployeeComponent,
+        data: {
+            title: 'Add New Employee'
+        }
     },
     {
         path: 'data-binding',
-        component: DataBindingComponent
+        component: DataBindingComponent,
+        data: {
+            title: 'Data Binding'
+        }
     },
     {
         path:'emp-list',
-        component: EmployeeListComponent
+        component: EmployeeListComponent,
+        data: {
+            title: 'List of Employees'
+        }
     },
     {
         path:'structural-directive',
-        component: StructuralDirectiveComponent
+        component: StructuralDirectiveComponent,
+        data: {
+            title: 'Structural Directive'
+        }
     },
     {
         path: 'attribute-directive',
-        component: AttributeDirectiveComponent
+        component: AttributeDirectiveComponent,
+        data: {
+            title: 'Attribute Directive'
+        }
     },
     {
         path: 'control-flow/if-else',
-        component: IfelseComponent
+        component: IfelseComponent,
+        data: {
+            title: 'If Else'
+        }
     },
     {
         path: 'control-flow/for-loop',
-        component: ForLoopComponent
+        component: ForLoopComponent,
+        data: {
+            title: 'For Loop'
+        }
     },
     {
         path: 'pipes',
-        component: PipeComponent
+        component: PipeComponent,
+        data: {
+            title: 'Pipes'
+        }
     },
     {
         path: 'forms/templateForm',
-        component: TemplateFormComponent
+        component: TemplateFormComponent,
+        data: {
+            title: 'Template Form'
+        }
     },
     {
         path: 'forms/reactiveForm',
-        component: ReactiveFormComponent
+        component: ReactiveFormComponent,
+        data: {
+            title: 'Reactive Form'
+        }
     },
     {
         path: 'api/getApi',
-        component: GetApiComponent
+        component: GetApiComponent,
+        data: {
+            title: 'Get API'
+        }
     },
     {
         path: 'api/postApi',
-        component: PostApiComponent
+        component: PostApiComponent,
+        data: {
+            title: 'Post API'
+        }
     },
     {
         path: 'api/updateApi',
-        component: UpdateApiComponent
+        component: UpdateApiComponent,
+        data: {
+            title: 'Update API'
+        }
     },
     {
         path: 'api/serviceApi',
-        component: ServiceApiComponent
+        component: ServiceApiComponent,
+        data: {
+            title: 'Service API'
+        }
+    },
+    {
+        path: 'popups',
+        component: PopupsComponent,
+        data: {
+            title: 'Bootstrap Modals'
+        }
+    },
+    {
+        path: 'task',
+        component: TaskPageComponent,
+        data: {
+            title: 'Bootstrap Modals with Task Example'
+        }
     },
 ];
