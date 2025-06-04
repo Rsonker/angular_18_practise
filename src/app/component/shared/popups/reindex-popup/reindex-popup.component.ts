@@ -92,14 +92,21 @@ export class ReindexPopupComponent {
           next:res=>{
               if(res){
                 console.log(res);
-                this.modalRef.close(true);
-                this.modalConfig.onClose();
+                let payload = {
+                    "docName": this.f.docName.value,
+                    "deliveryStatus": this.f.deliveryStatus.value
+                }
+                  this.taskService.reIndexSuccess(payload).subscribe({
+                    next: res=>{
+                      console.log(res);
+                      this.modalRef.close(true);
+                      this.modalConfig.onClose();
+                    },
+                    error: err=>console.log(err)
+                  })
               }
           },
-          error: err=>{
-            console.log(err);
-          }
-        
+          error: err=>console.log(err)
       })
     }  
     else{

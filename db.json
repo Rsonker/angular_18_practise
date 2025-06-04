@@ -11,6 +11,23 @@
       "views": 200
     }
   ],
+  "reindex-success": [
+    {
+      "id": "1",
+      "docName": "a title",
+      "deliveryStatus": true
+    },
+    {
+      "id": "cfcd",
+      "docName": "New Document reindex 01",
+      "deliveryStatus": "in-progress"
+    },
+    {
+      "id": "a598",
+      "docName": "New Document reindex 01",
+      "deliveryStatus": "in-progress"
+    }
+  ],
   "reindex": [
     {
       "id": "1",
@@ -56,6 +73,30 @@
     },
     {
       "id": "47ae",
+      "docName": "New Document reindex 01",
+      "docDescription": "Document Description reindex 01",
+      "deliveryStatus": "in-progress"
+    },
+    {
+      "id": "15d6",
+      "docName": "New Document reindex 01",
+      "docDescription": "Document Description reindex 01",
+      "deliveryStatus": "in-progress"
+    },
+    {
+      "id": "75fd",
+      "docName": "New Document reindex 01",
+      "docDescription": "Document Description reindex 01",
+      "deliveryStatus": "in-progress"
+    },
+    {
+      "id": "293f",
+      "docName": "New Document reindex 01",
+      "docDescription": "Document Description reindex 01",
+      "deliveryStatus": "in-progress"
+    },
+    {
+      "id": "4fe6",
       "docName": "New Document reindex 01",
       "docDescription": "Document Description reindex 01",
       "deliveryStatus": "in-progress"

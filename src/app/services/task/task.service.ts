@@ -21,6 +21,10 @@ export class TaskService {
   saveReindex(obj: any){
     return this.http.post(this.apiURL+"reindex", obj);
   }
+  
+  reIndexSuccess(obj: any){
+    return this.http.post(this.apiURL+"reindex-success", obj);
+  }
 
   IsTaskExistInDB(taskId: string){
     return this.http.get(`${this.apiURL+'task/'}${taskId}`);
