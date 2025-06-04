@@ -4,6 +4,10 @@
     <br/>
     <br/>
     <button class="btn btn-primary" (click)="openReIndexPopup()">Re-Index</button>
+    <br/>
+    <br/>
+    <br/>
+    <button class="btn btn-primary" (click)="openCommonPopup()">Common Popup Person Details</button>
 </div>
 
 <app-task-popup #addTaskPopupModal [modalConfig]="modalConfig"
@@ -13,3 +17,15 @@
 [modalConfig]="reIndexModalConfig"
 [reindexingForm]="noticeForm.controls['reindexingForm']">
 </app-reindex-popup>
+<app-common-popup-bhsi #personDetails [modalConfig]="personDetailsConfig">
+    <form [formGroup]="noticeForm.controls['personDetail']">
+       <div class="mb-3">
+            <label for="firstName" class="form-label">First Name </label>
+            <input type="text" class="form-control" id="firstName" formControlName="firstName" name="firstName">
+        </div>
+       <div class="mb-3">
+            <label for="lastName" class="form-label">Last Name </label>
+            <input type="text" class="form-control" id="lastName" formControlName="lastName" name="lastName">
+        </div>
+    </form>
+</app-common-popup-bhsi>
