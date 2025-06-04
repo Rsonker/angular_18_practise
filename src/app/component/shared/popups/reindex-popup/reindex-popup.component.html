@@ -1,0 +1,49 @@
+<ng-template #reIndexModal>
+    <div class="modal-header">
+        <h5 class="modal-title">Index</h5>
+        <button type="button" class="btn-close" (click)="dismiss()"></button>
+    </div>
+
+    <div class="modal-body">
+        <div class="container-fluid">
+            <form [formGroup]="reindexingForm" (ngSubmit)="onClose()">
+                <div class="mb-3">
+                    <label for="docName" class="form-label">Document Name</label>
+                    <input type="text" class="form-control" id="docName" formControlName="docName" name="docName">
+                </div>
+                <div class="mb-3">
+                    <label for="docDescription" class="form-label">Document Description</label>
+                    <textarea class="form-control" id="docDescription"  name="docDescription" formControlName="docDescription"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="docDate" class="form-label">Document Date</label>
+                    <input type="date" class="form-control" id="docDate"  name="docDate" formControlName="docDate">
+                </div>
+                <div class="mb-3">
+                    <label for="docType" class="form-label">Document Type</label>
+                    <select class="form-select" id="docType" name="docType" formControlName="docType">
+                        <option value="pdf">PDF</option>
+                        <option value="docx">Docx</option>
+                        <option value="eml">Email</option>
+                    </select>
+                </div>   
+                <div class="mb-3">
+                    <label for="sendTo" class="form-label">Send To</label>
+                     <input type="text" class="form-control" id="sendTo"  name="sendTo" formControlName="sendTo">
+                </div>
+                <div class="mb-3">
+                    <label for="taskStatus" class="form-label">Delivery Status</label>
+                    <select class="form-select" id="deliveryStatus" name="deliveryStatus" formControlName="deliveryStatus">
+                        <option value="not-started">Not Send</option>
+                        <option value="in-progress">In Send</option>
+                        <option value="completed">Send Successfully</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+    </div>
+     <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="dismiss()">Close</button>
+        <button type="submit" class="btn btn-primary" (click)="onClose()">Re-Index</button>
+    </div>
+</ng-template>

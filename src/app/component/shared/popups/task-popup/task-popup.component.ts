@@ -2,6 +2,7 @@ import { CommonModule, DatePipe } from '@angular/common';
 import { Component, Input, TemplateRef, ViewChild } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { NgbModal, NgbModalOptions, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { TaskService } from '../../../../services/task/task.service';
 
 export interface ModalConfig {
   modalTitle?: string
@@ -52,6 +53,7 @@ export class TaskPopupComponent {
 
   constructor(private modalService: NgbModal,
     private datePipe: DatePipe,
+    private taskService: TaskService
   ) {}
 
   open(): Promise<boolean> {
@@ -83,10 +85,23 @@ export class TaskPopupComponent {
   public async onSaveTaskDetails(): Promise<any>{
     let taskDetails: TaskDetailModal;
     taskDetails = this.taskForm.getRawValue();
-    taskDetails.dueDate = this.datePipe.transform(new Date(), 'yyyy-MM-dd');
-    await this.modalConfig.onClose?.(taskDetails, this.taskForm);
-    this.modalRef.close(taskDetails);
-    return taskDetails;
+    taskDetails.dueDate = this.datePipe.transform(taskDetails.dueDate, 'yyyy-MM-dd');
+    await this.taskService.saveNewTask(taskDetails).subscribe({
+      next: (res: any) => {
+        if (res.id) {
+          if(this.modalConfig.onClose !== undefined) {
+            this.modalConfig.onClose(res);
+          }
+          this.modalRef.close(true);
+        } else {
+          alert('Failed to create task');
+        }
+      },
+      error: (err: any) => {
+        console.error(err);
+        alert('An error occurred while saving the task');
+      }
+    })
   }
 
 

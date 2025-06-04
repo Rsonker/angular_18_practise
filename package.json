@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "backend": "npx json-server db.json --port 3000 --host 0.0.0.0",
+    "test2": "json-server db.json"
   },
   "private": true,
   "dependencies": {
@@ -21,6 +23,7 @@
     "@ng-bootstrap/ng-bootstrap": "^18.0.0",
     "bootstrap": "^5.3.3",
     "jquery": "^3.7.1",
+    "json-server": "^1.0.0-beta.3",
     "popper.js": "^1.16.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

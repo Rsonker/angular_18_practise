@@ -3,7 +3,7 @@
         <form [formGroup]="taskForm" (ngSubmit)="onClose()">
             <div class="modal-header">
                 <h4 class="modal-title">Task Details</h4>
-                <button type="button" class="btn-close" aria-label="Close" ></button>
+                <button type="button" class="btn-close" aria-label="Close"  (click)="dismiss()" ></button>
             </div>
             <div class="modal-body">
                 <div class="mb-3">
@@ -26,10 +26,6 @@
                         <option value="high">High</option>
                     </select>
                 </div>   
-                <div class="mb-3">
-                    <label for="taskAssignedTo" class="form-label">Assign To</label>
-                     <input type="text" class="form-control" id="assignedTo"  name="assignedTo" formControlName="assignedTo">
-                </div>
                 <div class="mb-3">
                     <label for="taskAssignedTo" class="form-label">Assign To</label>
                      <input type="text" class="form-control" id="assignedTo"  name="assignedTo" formControlName="assignedTo">

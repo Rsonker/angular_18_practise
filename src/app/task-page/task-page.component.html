@@ -1,4 +1,15 @@
-<button class="btn btn-primary" (click)="openAddTaskPopup()">Add Task</button>
+<div class="container my-5">
+    <button class="btn btn-primary" (click)="openAddTaskPopup()">Add Task</button>
+    <br/>
+    <br/>
+    <br/>
+    <button class="btn btn-primary" (click)="openReIndexPopup()">Re-Index</button>
+</div>
+
 <app-task-popup #addTaskPopupModal [modalConfig]="modalConfig"
-[taskForm]="taskForm"
-></app-task-popup>
+[taskForm]="taskForm">
+</app-task-popup>
+<app-reindex-popup #reindex 
+[modalConfig]="reIndexModalConfig"
+[reindexingForm]="noticeForm.controls['reindexingForm']">
+</app-reindex-popup>

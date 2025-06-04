@@ -16,7 +16,8 @@ import { filter, map } from 'rxjs';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, Comp1Component, Comp2Component, Comp3Component, Comp4Component, Comp5Component, DataBindingComponent, StructuralDirectiveComponent, AttributeDirectiveComponent, NavComponent, TemplateRefComponent],
+  imports: [RouterOutlet, NavComponent],
+//   imports: [RouterOutlet, Comp1Component, Comp2Component, Comp3Component, Comp4Component, Comp5Component, DataBindingComponent, StructuralDirectiveComponent, AttributeDirectiveComponent, NavComponent, TemplateRefComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
